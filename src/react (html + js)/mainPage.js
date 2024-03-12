@@ -1,4 +1,4 @@
-import './App.css';
+import '../css/mainPage.css';
 import React, { useEffect, useState, useCallback } from 'react';
 import axios from 'axios';
 
@@ -44,7 +44,7 @@ function App() {
     <p>Description: {weatherData.weather[0].description}</p>
     <p>Feels like : {weatherData.main.feels_like}°C</p>
     <p>Humidity : {weatherData.main.humidity}%</p>
-    <p>Pressure : {weatherData.main.pressure}</p>
+    <p>Rain : {weatherData.rain}</p>
     <p>Wind Speed : {weatherData.wind.speed}m/s</p>
     </>
     ) : (
