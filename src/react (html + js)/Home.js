@@ -1,9 +1,11 @@
-import './css/Home.css';
+import '../css/Home.css';
 import React, { useEffect, useState, useCallback } from 'react';
 import axios from 'axios';
+import Search from './OpenWeatherAPI';
 
 
 function Home() {
+
   const [city, setCity] = useState('');
   const [weatherData, setWeatherData] = useState(null);
  
@@ -28,14 +30,13 @@ function Home() {
   fetchData();
   };
 
-
   return (
       <div>
         <div>
           <h1>Your Location</h1>
         </div>
         <div>
-          <h3>Follow home page figma layout</h3>
+          <p>IN development..</p>
         </div>
       </div>
 
