@@ -1,57 +1,44 @@
-import './App.css';
-import React, { useEffect, useState, useCallback } from 'react';
-import axios from 'axios';
+import './css/App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'; 
+import locationPinImage from './images/location-pin.png';
+import calenderImage from './images/calendar.png';
+import footballImage from './images/football.png';
+
+import Home from './Home';
+import Calender from './Calender';
+import SavedLocations from './SavedLocations';
+
+
 
 function App() {
-  const [city, setCity] = useState('');
-  const [weatherData, setWeatherData] = useState(null);
-  const fetchData = useCallback(async () => {
-    try {
-      const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=b167c88bb7301bc04a99e1bd24f7c97c`);
-      setWeatherData(response.data);
-      console.log(response.data); // You can see all the weather data in console log
-    } catch (error) {
-      console.error(error);
-    }
-  }, [city]);
-
-  useEffect(() => {
-  fetchData();
-  }, [fetchData]);
-  const handleInputChange = (e) => {
-  setCity(e.target.value);
-  };
-  const handleSubmit = (e) => {
-  e.preventDefault();
-  fetchData();
-  };
-
   return (
-    <div>
-    <form onSubmit={handleSubmit}>
-    <input
-    type="text"
-    placeholder="Enter city name"
-    value={city}
-    onChange={handleInputChange}
-    />
-    <button type="submit">Get Weather</button>
-    </form>
-    {weatherData ? (
-    <>
-    <h2>{weatherData.name}</h2>
-    <p>Temperature: {weatherData.main.temp}°C</p>
-    <p>Description: {weatherData.weather[0].description}</p>
-    <p>Feels like : {weatherData.main.feels_like}°C</p>
-    <p>Humidity : {weatherData.main.humidity}%</p>
-    <p>Pressure : {weatherData.main.pressure}</p>
-    <p>Wind Speed : {weatherData.wind.speed}m/s</p>
-    </>
-    ) : (
-    <p>Loading weather data...</p>
-    )}
-    </div>
+    <Router>
+        <div>
+          <Routes>
+            <Route path="/" element={<Home/>} />  
+            <Route path="/App" element={<Home/>} />  
+            <Route path="/Calender" element={<Calender/>} />
+            <Route path="/SavedLocations" element={<SavedLocations/>} />
+          </Routes>
+         </div>
+      <div>
+      <div className="navigation">
+        <Link to="/Calender">
+          <img src={calenderImage} alt="App" width={40} height={40}/>
+        </Link>
+        <Link to="/App">
+          <img src={footballImage} alt="App" width={40} height={40}/>
+        </Link>
+        <Link to="/SavedLocations">
+          <img src={locationPinImage} alt="App" width={40} height={40}/>
+        </Link>
+        </div>
+      </div>
+    </Router>
+
     );
-    };
-    export default App;
+  };
+
+  export default App;
 
