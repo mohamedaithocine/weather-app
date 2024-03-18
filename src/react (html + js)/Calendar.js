@@ -1,8 +1,8 @@
-import "../css/Calender.css";
+import "../css/Calendar.css";
 import React, { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 
-function Calender() {
+function Calendar() {
   return (
     <div>
       <div>

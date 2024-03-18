@@ -12,7 +12,7 @@ import humidity_icon from "../assets/images/Humidity.svg"
 
 export default function Main() {
 
-  const [city, setCity] = useState('');
+  const [city, setCity] = useState('Mile End');
   const [weatherData, setWeatherData] = useState(null);
   const [wicon, setWicon] = useState(cloud_icon);
   const fetchData = useCallback(async () => {
@@ -25,13 +25,13 @@ export default function Main() {
       );
       console.log(hourlyResponse.data); // You can see all the weather data in console log
 
-      if (response.data.weather[0].icon == "01d" || response.data.weather[0].icon == "01n") {setWicon(clear_icon)}
-      else if (response.data.weather[0].icon == "02d" || response.data.weather[0].icon == "02n") {setWicon(cloud_icon)}
-      else if (response.data.weather[0].icon == "03d" || response.data.weather[0].icon == "03n") {setWicon(drizzle_icon)}
-      else if (response.data.weather[0].icon == "04d" || response.data.weather[0].icon == "04n") {setWicon(drizzle_icon)}
-      else if (response.data.weather[0].icon == "09d" || response.data.weather[0].icon == "09n") {setWicon(rain_icon)}
-      else if (response.data.weather[0].icon == "10d" || response.data.weather[0].icon == "10n") {setWicon(rain_icon)}
-      else if (response.data.weather[0].icon == "13d" || response.data.weather[0].icon == "13n") {setWicon(snow_icon)}
+      if (response.data.weather[0].icon === "01d" || response.data.weather[0].icon === "01n") {setWicon(clear_icon)}
+      else if (response.data.weather[0].icon === "02d" || response.data.weather[0].icon === "02n") {setWicon(cloud_icon)}
+      else if (response.data.weather[0].icon === "03d" || response.data.weather[0].icon === "03n") {setWicon(drizzle_icon)}
+      else if (response.data.weather[0].icon === "04d" || response.data.weather[0].icon === "04n") {setWicon(drizzle_icon)}
+      else if (response.data.weather[0].icon === "09d" || response.data.weather[0].icon === "09n") {setWicon(rain_icon)}
+      else if (response.data.weather[0].icon === "10d" || response.data.weather[0].icon === "10n") {setWicon(rain_icon)}
+      else if (response.data.weather[0].icon === "13d" || response.data.weather[0].icon === "13n") {setWicon(snow_icon)}
       else {setWicon(cloud_icon)}
     } catch (error) {
       console.error(error);
@@ -65,7 +65,7 @@ export default function Main() {
             value={city}
             onChange={handleInputChange}/>
             {/* You might wanna change h1 back to just your location */}
-            <h1 className='your-location'>{weatherData.name}</h1>
+            <h1 className='your-location'>Your Location</h1>
             <h3 className='minus-7-f'>{Math.floor(weatherData.main.temp)}°</h3>
             <h3 className='snow-10'>{weatherData.weather[0].description}</h3>
             <div className='highlow'>
@@ -177,7 +177,7 @@ export default function Main() {
             value={city}
             onChange={handleInputChange}/>
 
-            <h1 className='your-location'>{}</h1>
+            <h1 className='your-location'>Your Location</h1>
             <h3 className='minus-7-f'>-7°</h3>
             <h3 className='snow-10'>Snow</h3>
             <div className='highlow'>
@@ -186,50 +186,63 @@ export default function Main() {
             </div>
         </div>
       
-          <div className='rectangle'>
+        <div className='rectangle'>
             <div className='weather-hour'>
-              <span className='now'>Now</span>
-              <span className='time-10am'>10AM</span>
-              <span className='time-11am'>11AM</span>
-              <span className='time-12pm'>12PM</span>
-              <span className='time-1pm'>1PM</span>
-              <span className='time-2pm'>2PM</span>
-              <span className='time-3pm'>3PM</span>
+              <span className='time'>9AM</span>
+              <div className='weather-icon'>
+                <img src={wicon} />
+              </div>
+              <span className='temp-hour'>-7°</span>
             </div>
-            <div className='flex-row-ac'>
-              <div className='snow'>
-                <div className='outline' />
+            
+            <div className='weather-hour'>
+            <span className='time'>10AM</span>
+              <div className='weather-icon'>
+                <img src={wicon} />
               </div>
-              <div className='snow-1'>
-                <div className='outline-2' />
-              </div>
-              <div className='snow-3'>
-                <div className='outline-4' />
-              </div>
-              <div className='snow-5'>
-                <div className='outline-6' />
-              </div>
-              <div className='snow-7'>
-                <div className='outline-8' />
-              </div>
-              <div className='snow-9'>
-                <div className='outline-a' />
-              </div>
-              <div className='snow-b'>
-                <div className='outline-c' />
-              </div>
+              <span className='temp-hour'>-7°</span>
             </div>
-            <div className='flex-row-de'>
-              <span className='minus-7'>-7°</span>
-              <span className='minus-8'>-8°</span>
-              <div className='regroup'>
-                <span className='minus-7-d'>-7°</span>
-                <span className='minus-6'>-6°</span>
-                <span className='minus-6-e'>-6°</span>
+            
+            <div className='weather-hour'>
+            <span className='time'>11AM</span>
+              <div className='weather-icon'>
+                <img src={wicon} />
               </div>
-              <span className='minus-10'>-10°</span>
-              <span className='minus-9'>-9°</span>
+              <span className='temp-hour'>-7°</span>
             </div>
+
+            <div className='weather-hour'>
+            <span className='time'>12PM</span>
+              <div className='weather-icon'>
+                <img src={wicon} />
+              </div>
+              <span className='temp-hour'>-7°</span>
+            </div>
+
+            <div className='weather-hour'>
+            <span className='time'>1PM</span>
+              <div className='weather-icon'>
+                <img src={wicon} />
+              </div>
+              <span className='temp-hour'>-7°</span>
+            </div>
+
+            <div className='weather-hour'>
+            <span className='time'>2PM</span>
+              <div className='weather-icon'>
+                <img src={wicon} />
+              </div>
+              <span className='temp-hour'>-7°</span>
+            </div>
+
+            <div className='weather-hour'>
+            <span className='time'>3PM</span>
+              <div className='weather-icon'>
+                <img src={wicon} />
+              </div>
+              <span className='temp-hour'>-7°</span>
+            </div>
+
           </div>
 
         <div className='tipsBox'>
