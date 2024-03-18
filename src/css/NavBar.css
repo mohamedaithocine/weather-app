@@ -1,0 +1,56 @@
+.active {
+  background-color: #005249;
+}
+
+.footballButton:not(.active):hover, .locationButton:not(.active):hover, .calendarButton:not(.active):hover {
+  background: rgba(0, 82, 73, 0.5);
+}
+
+.navBar {
+  position: sticky;
+  width: calc(215 * var(--rpx));
+  height: calc(53 * var(--rpx));
+  margin: auto;
+  margin-top: 10px;
+  top: 92svh;
+}
+
+.footballButton {
+  display: flex;
+  position: absolute;
+  width: calc(74 * var(--rpx));
+  height: calc(53 * var(--rpx));
+  left: calc(61 * var(--rpx));
+  border-radius: calc(20 * var(--rpx));
+}
+
+.footballButtonIMG {
+  margin: auto;
+}
+
+.locationButton {
+  display: flex;
+  position: absolute;
+  width: calc(74 * var(--rpx));
+  height: calc(53 * var(--rpx));
+  left: calc(141 * var(--rpx));
+  border-radius: calc(20 * var(--rpx));
+}
+
+.locationButtonIMG {
+  margin: auto;
+}
+
+.calendarButton {
+  display: flex;
+  position: absolute;
+  width: calc(74 * var(--rpx));
+  height: calc(53 * var(--rpx));
+  left: calc(-19 * var(--rpx));
+  border-radius: calc(20 * var(--rpx));
+}
+
+.calendarButtonIMG {
+  margin: auto;
+}
+
