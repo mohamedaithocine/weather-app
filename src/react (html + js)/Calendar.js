@@ -9,7 +9,6 @@ function Calender() {
         <h1>Calendar</h1>
       </div>
 
-<<<<<<< HEAD:src/react (html + js)/Calendar.js
 
         <h3>I think this is the extended feature that  shows </h3>
         <h3> up coming football matches and releted weather. </h3>
@@ -20,11 +19,3 @@ function Calender() {
     };
     export default Calendar;
 
-=======
-      <h3>I think this is the extended feature that shows </h3>
-      <h3> up coming football matches and releted weather. </h3>
-    </div>
-  );
-}
-export default Calender;
->>>>>>> UPDATED-1:src/Calender.js
