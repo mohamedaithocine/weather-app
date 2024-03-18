@@ -1,16 +1,15 @@
-import '../css/Calendar.css';
-import React, { useEffect, useState, useCallback } from 'react';
-import axios from 'axios';
+import "./css/Calender.css";
+import React, { useEffect, useState, useCallback } from "react";
+import axios from "axios";
 
-
-function Calendar() {
-
+function Calender() {
   return (
     <div>
       <div>
         <h1>Calendar</h1>
       </div>
 
+<<<<<<< HEAD:src/react (html + js)/Calendar.js
 
         <h3>I think this is the extended feature that  shows </h3>
         <h3> up coming football matches and releted weather. </h3>
@@ -21,3 +20,11 @@ function Calendar() {
     };
     export default Calendar;
 
+=======
+      <h3>I think this is the extended feature that shows </h3>
+      <h3> up coming football matches and releted weather. </h3>
+    </div>
+  );
+}
+export default Calender;
+>>>>>>> UPDATED-1:src/Calender.js
