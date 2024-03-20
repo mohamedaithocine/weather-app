@@ -18,7 +18,9 @@ function Calendar() {
         status: "NS",
       },
       headers: {
-        "X-RapidAPI-Key": "1dae4b29e9msh18369a4e952eb73p1f44bfjsnf5cbb3cfb218",
+        // Azlan's api key: "1dae4b29e9msh18369a4e952eb73p1f44bfjsnf5cbb3cfb218", exhausted for today
+        // Add your api key below
+        "X-RapidAPI-Key": "",
         "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com",
       },
     };
@@ -47,10 +49,10 @@ function Calendar() {
       <div className="container my-3">
         <h3>Upcoming Matches:</h3>
         <div className="row">
-          {matches.map((match, index) => (
+          {matches.slice(0, 9).map((match, index) => (
             <div className="col md-4" key={index}>
               <CalenderItem
-                title={`${match.homeTeam} vs ${match.awayTeam} `}
+                title={`${match.homeTeam} vs ${match.awayTeam}`}
                 date={match.date}
               />
             </div>
