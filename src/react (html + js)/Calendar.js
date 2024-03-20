@@ -50,7 +50,8 @@ function Calendar() {
           {matches.map((match, index) => (
             <div className="col md-4" key={index}>
               <CalenderItem
-                title={`${match.date} : ${match.homeTeam} vs ${match.awayTeam}`}
+                title={`${match.homeTeam} vs ${match.awayTeam} `}
+                date={match.date}
               />
             </div>
           ))}

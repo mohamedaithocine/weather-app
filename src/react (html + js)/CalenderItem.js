@@ -8,6 +8,7 @@ function CalenderItem(props) {
         <img src={logo} className="card-img-top" alt="" />
         <div className="card-body">
           <h5 className="card-title">{props.title}</h5>
+          <h5 className="card-title">{props.date}</h5>
           <p className="card-text">Weather Data to Display here.</p>
           <a href="/#" className="btn btn-primary">
             Go somewhere
