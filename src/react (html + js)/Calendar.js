@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import CalenderItem from "./CalenderItem";
 
 function Calendar() {
@@ -35,21 +35,17 @@ function Calendar() {
       console.error(error);
     }
   };
-
   useEffect(() => {
     fetchData();
-  }, []); // Empty dependency array means this effect runs only once after the component mounts
+  }, []);
 
   return (
     <>
       <div>
         <h1>Calendar</h1>
       </div>
-
       <div className="container my-3">
-        <b>
-          <h3>Upcoming Matches:</h3>
-        </b>
+        <h3>Upcoming Matches:</h3>
         <div className="row">
           {matches.map((match, index) => (
             <div className="col md-4" key={index}>
