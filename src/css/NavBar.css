@@ -8,6 +8,51 @@
 
 .navBar {
   position: sticky;
+  display: flex;
+  justify-content: space-around;
+  width: 400px;
+  height: 72.7px;
+  margin: auto;
+  margin-top: 10px;
+  top: 92svh;
+}
+
+.footballButton {
+  display: flex;
+  width: 90px;
+  height: 60px;
+  border-radius: 20px;
+}
+
+.footballButtonIMG {
+  margin: auto;
+}
+
+.locationButton {
+  display: flex;
+  width: 90px;
+  height: 60px;
+  border-radius: 20px;
+}
+
+.locationButtonIMG {
+  margin: auto;
+}
+
+.calendarButton {
+  display: flex;
+  width: 90px;
+  height: 60px;
+  border-radius: 20px;
+}
+
+.calendarButtonIMG {
+  margin: auto;
+}
+
+@media screen and (max-width: 500px) {
+.navBar {
+  position: sticky;
   width: calc(215 * var(--rpx));
   height: calc(53 * var(--rpx));
   margin: auto;
@@ -24,10 +69,6 @@
   border-radius: calc(20 * var(--rpx));
 }
 
-.footballButtonIMG {
-  margin: auto;
-}
-
 .locationButton {
   display: flex;
   position: absolute;
@@ -35,10 +76,6 @@
   height: calc(53 * var(--rpx));
   left: calc(141 * var(--rpx));
   border-radius: calc(20 * var(--rpx));
-}
-
-.locationButtonIMG {
-  margin: auto;
 }
 
 .calendarButton {
@@ -50,7 +87,4 @@
   border-radius: calc(20 * var(--rpx));
 }
 
-.calendarButtonIMG {
-  margin: auto;
 }
-
