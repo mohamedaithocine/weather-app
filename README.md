@@ -7,7 +7,7 @@ ALI, ASHAR <br>
 ALI, ILYAS M <br>
 
 
-In the project directory, you can run the program by :
+In the project directory, you can run the program by running the following commands in the terminal :
 
 ### `npm install`
 
