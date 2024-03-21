@@ -14,11 +14,15 @@
 .main-container {
   position: relative;
   width: 1000px;
-  height:90svh;
+  height: 90svh;
   margin: 0 auto;
   background-size: cover;
   overflow: hidden;
   background-color: (255, 0, 0, 0.5);
+  overflow-y: auto;
+}
+.main-container::-webkit-scrollbar {
+  width: 0; /* Hide scrollbar for Chrome, Safari, and Opera */
 }
 
 .rectangle {
@@ -33,7 +37,6 @@
   border-radius: 20px;
   justify-content: space-evenly;
 }
-
 
 .weather-hour {
   display: flex;
@@ -70,11 +73,10 @@
 
 /* Current Weather */
 
-.currentWeather{
+.currentWeather {
   display: flex;
   justify-content: center;
 }
-
 
 .your-location {
   position: absolute;
@@ -82,7 +84,6 @@
   font-family: SF UI Text, var(--default-font-family);
   font-size: 40px;
 }
-
 
 .mile-end {
   position: absolute;
@@ -151,7 +152,22 @@
   backdrop-filter: blur(calc(5 * var(--rpx)));
   margin: auto;
   margin-top: 15px;
-  overflow: scroll;
+  /* overflow: scroll; */
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.tipsBox {
+  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: 200px; /* Adjust the maximum height as needed */
+}
+
+.tipsBox::-webkit-scrollbar {
+  width: 0; /* Hide scrollbar for Chrome, Safari, and Opera */
+}
+
+.tipsBox {
+  -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
 }
 
 .warm-up-tips {
@@ -167,7 +183,7 @@
   white-space: pre-wrap;
 }
 
-.precwindDiv{
+.precwindDiv {
   position: relative;
   width: 900px;
   margin: auto;
@@ -205,7 +221,6 @@
   position: absolute;
   top: 20px;
 }
-
 
 .windBox {
   display: flex;
@@ -260,288 +275,283 @@
   font-weight: 400;
 }
 
-@media screen and (max-width: 500px){
-  
-.main-container,
-.main-container * {
-  box-sizing: border-box;
-}
+@media screen and (max-width: 500px) {
+  .main-container,
+  .main-container * {
+    box-sizing: border-box;
+  }
 
-.main-container {
-  position: relative;
-  width: calc(430 * var(--rpx));
-  height:90svh;
-  margin: 0 auto;
-  background-size: cover;
-  overflow: hidden;
-}
+  .main-container {
+    position: relative;
+    width: calc(430 * var(--rpx));
+    height: 90svh;
+    margin: 0 auto;
+    background-size: cover;
+    overflow: hidden;
+  }
 
-.rectangle {
-  display: flex;
-  position: relative;
-  width: calc(385 * var(--rpx));
-  height: calc(112 * var(--rpx));
-  margin: auto;
-  margin-top: 2rem;
-  overflow: visible auto;
-  border-radius: calc(20 * var(--rpx));
-  backdrop-filter: blur(calc(5 * var(--rpx)));
-}
+  .rectangle {
+    display: flex;
+    position: relative;
+    width: calc(385 * var(--rpx));
+    height: calc(112 * var(--rpx));
+    margin: auto;
+    margin-top: 2rem;
+    overflow: visible auto;
+    border-radius: calc(20 * var(--rpx));
+    backdrop-filter: blur(calc(5 * var(--rpx)));
+  }
 
-.weather-hour {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  width: 47.55px;
-  height: 81.8px;
-  margin: 17px 0 0 0px;
+  .weather-hour {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 47.55px;
+    height: 81.8px;
+    margin: 17px 0 0 0px;
+  }
 
-}
+  .time {
+    position: absolute;
+    top: 0;
+    height: calc(18 * var(--rpx));
+    color: #ebfce3;
+    font-family: SF UI Text, var(--default-font-family);
+    font-size: calc(15 * var(--rpx));
+    font-weight: 400;
+    line-height: calc(17.900390625 * var(--rpx));
+    text-align: left;
+    white-space: nowrap;
+  }
 
-.time {
-  position: absolute;
-  top: 0;
-  height: calc(18 * var(--rpx));
-  color: #ebfce3;
-  font-family: SF UI Text, var(--default-font-family);
-  font-size: calc(15 * var(--rpx));
-  font-weight: 400;
-  line-height: calc(17.900390625 * var(--rpx));
-  text-align: left;
-  white-space: nowrap;
-}
+  .temp-hour {
+    position: absolute;
+    width: calc(23 * var(--rpx));
+    height: calc(18 * var(--rpx));
+    top: 40px;
+    color: #ebfce3;
+    font-family: SF UI Text, var(--default-font-family);
+    font-size: calc(15 * var(--rpx));
+    font-weight: 400;
+    line-height: calc(17.900390625 * var(--rpx));
+    text-align: center;
+    white-space: nowrap;
+  }
 
-.temp-hour {
-  position: absolute;
-  width: calc(23 * var(--rpx));
-  height: calc(18 * var(--rpx));
-  top: 40px;
-  color: #ebfce3;
-  font-family: SF UI Text, var(--default-font-family);
-  font-size: calc(15 * var(--rpx));
-  font-weight: 400;
-  line-height: calc(17.900390625 * var(--rpx));
-  text-align: center;
-  white-space: nowrap;
-}
+  /* Current Weather */
 
-/* Current Weather */
+  .currentWeather {
+    display: flex;
+    justify-content: center;
+  }
 
-.currentWeather{
-  display: flex;
-  justify-content: center;
-}
+  .your-location {
+    position: absolute;
+    color: #c8facd;
+    font-family: SF UI Text, var(--default-font-family);
+    font-size: calc(26 * var(--rpx));
+  }
 
+  .mile-end {
+    position: absolute;
+    color: #5be584;
+    background-color: transparent;
+    border: none;
+    font-family: SF UI Text, var(--default-font-family);
+    font-size: 15.6833px;
+    font-weight: 400;
+    margin: 0;
+    margin-top: 45px;
+    text-align: center;
+    z-index: 2;
+  }
 
-.your-location {
-  position: absolute;
-  color: #c8facd;
-  font-family: SF UI Text, var(--default-font-family);
-  font-size: calc(26 * var(--rpx));
-}
+  .minus-7-f {
+    position: absolute;
+    color: #c8facd;
+    font-family: SF UI Display, var(--default-font-family);
+    font-size: 100px;
+    font-weight: 400;
+    margin: 0;
+    margin-top: 50px;
+  }
 
+  .snow-10 {
+    color: #ebfce2;
+    font-family: SF UI Text, var(--default-font-family);
+    font-size: calc(26 * var(--rpx));
+    font-weight: 400;
+    margin: 0;
+    margin-top: 145px;
+  }
+  .highlow {
+    position: absolute;
+    font-family: SF UI Text, var(--default-font-family);
+    font-size: calc(15 * var(--rpx));
+    font-weight: 400;
+    margin: 0;
+    margin-top: 175px;
+  }
 
-.mile-end {
-  position: absolute;
-  color: #5be584;
-  background-color: transparent;
-  border: none;
-  font-family: SF UI Text, var(--default-font-family);
-  font-size: 15.6833px;
-  font-weight: 400;
-  margin: 0;
-  margin-top: 45px;
-  text-align: center;
-  z-index: 2;
-}
+  .high-intensity {
+    position: relative;
+    color: #ebfce3;
+    font-family: SF UI Text, var(--default-font-family);
+    font-size: calc(15 * var(--rpx));
+    font-weight: 400;
+    line-height: calc(17.900390625 * var(--rpx));
+    text-align: left;
+  }
+  .temperature-info {
+    position: relative;
+    color: #ebfce3;
+    font-family: SF UI Text, var(--default-font-family);
+    font-size: calc(15 * var(--rpx));
+    font-weight: 400;
+    line-height: calc(17.900390625 * var(--rpx));
+    text-align: left;
+  }
+  /* .tipsBox {
+    position: relative;
+    width: calc(385 * var(--rpx));
+    height: 157.6px;
+    border-radius: calc(20 * var(--rpx));
+    backdrop-filter: blur(calc(5 * var(--rpx)));
+    margin-top: 15px;
+    display: block;
+  } */
 
-.minus-7-f {
-  position: absolute;
-  color: #c8facd;
-  font-family: SF UI Display, var(--default-font-family);
-  font-size: 100px;
-  font-weight: 400;
-  margin: 0;
-  margin-top: 50px;
-}
+  .warm-up-tips {
+    position: absolute;
+    width: 364.183px;
+    height: 169.533px;
+    margin: 10px 0 0 20px;
+    font-family: SF UI Text, var(--default-font-family);
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 15px;
+    text-align: left;
+  }
 
-.snow-10 {
-  color: #ebfce2;
-  font-family: SF UI Text, var(--default-font-family);
-  font-size: calc(26 * var(--rpx));
-  font-weight: 400;
-  margin: 0;
-  margin-top: 145px;
-}
-.highlow {
-  position: absolute;
-  font-family: SF UI Text, var(--default-font-family);
-  font-size: calc(15 * var(--rpx));
-  font-weight: 400;
-  margin: 0;
-  margin-top: 175px;
-}
+  .precwindDiv {
+    position: relative;
+    width: calc(387 * var(--rpx));
+    height: calc(186 * var(--rpx));
+    margin: calc(15 * var(--rpx)) 0 0 calc(22 * var(--rpx));
+  }
 
-.high-intensity {
-  position: relative;
-  color: #ebfce3;
-  font-family: SF UI Text, var(--default-font-family);
-  font-size: calc(15 * var(--rpx));
-  font-weight: 400;
-  line-height: calc(17.900390625 * var(--rpx));
-  text-align: left;
-}
-.temperature-info {
-  position: relative;
-  color: #ebfce3;
-  font-family: SF UI Text, var(--default-font-family);
-  font-size: calc(15 * var(--rpx));
-  font-weight: 400;
-  line-height: calc(17.900390625 * var(--rpx));
-  text-align: left;
-}
-.tipsBox {
-  position: relative;
-  width: calc(385 * var(--rpx));
-  height: 157.6px;
-  border-radius: calc(20 * var(--rpx));
-  backdrop-filter: blur(calc(5 * var(--rpx)));
-  margin-top: 15px;
-  display: block;
-}
+  .precipitationBox {
+    position: absolute;
+    width: calc(186 * var(--rpx));
+    height: calc(186 * var(--rpx));
+    top: 0;
+    left: 0;
+    font-size: 0px;
+    border-radius: calc(20 * var(--rpx));
+    backdrop-filter: blur(calc(5 * var(--rpx)));
+  }
 
-.warm-up-tips {
-  position: absolute;
-  width: 364.183px;
-  height: 169.533px;
-  margin: 10px 0 0 20px;
-  font-family: SF UI Text, var(--default-font-family);
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 15px;
-  text-align: left;
-}
+  .precipitation-info {
+    display: block;
+    position: relative;
+    height: calc(19 * var(--rpx));
+    margin: calc(11 * var(--rpx)) 0 0 calc(15 * var(--rpx));
+    color: #ebfce2;
+    font-family: SF UI Text, var(--default-font-family);
+    font-size: calc(16 * var(--rpx));
+    font-weight: 400;
+    line-height: calc(19 * var(--rpx));
+    text-align: left;
+    white-space: nowrap;
+  }
 
-.precwindDiv{
-  position: relative;
-  width: calc(387 * var(--rpx));
-  height: calc(186 * var(--rpx));
-  margin: calc(15 * var(--rpx)) 0 0 calc(22 * var(--rpx));
-}
+  .precipitation-info-14 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: relative;
+    width: calc(152 * var(--rpx));
+    height: calc(38 * var(--rpx));
+    margin: calc(20 * var(--rpx)) 0 0 calc(15 * var(--rpx));
+    color: #ffffff;
+    font-family: SF UI Text, var(--default-font-family);
+    font-size: 80px;
+    font-weight: 400;
+    line-height: calc(23.8671875 * var(--rpx));
+    text-align: left;
+  }
 
-.precipitationBox {
-  position: absolute;
-  width: calc(186 * var(--rpx));
-  height: calc(186 * var(--rpx));
-  top: 0;
-  left: 0;
-  font-size: 0px;
-  border-radius: calc(20 * var(--rpx));
-  backdrop-filter: blur(calc(5 * var(--rpx)));
-}
+  .precipitation-info-15 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: relative;
+    width: calc(152 * var(--rpx));
+    height: calc(38 * var(--rpx));
+    margin: calc(13 * var(--rpx)) 0 0 calc(17 * var(--rpx));
+    color: #ffffff;
+    font-family: SF UI Text, var(--default-font-family);
+    font-size: calc(13 * var(--rpx));
+    font-weight: 400;
+    line-height: calc(15.513671875 * var(--rpx));
+    text-align: left;
+  }
 
-.precipitation-info {
-  display: block;
-  position: relative;
-  height: calc(19 * var(--rpx));
-  margin: calc(11 * var(--rpx)) 0 0 calc(15 * var(--rpx));
-  color: #ebfce2;
-  font-family: SF UI Text, var(--default-font-family);
-  font-size: calc(16 * var(--rpx));
-  font-weight: 400;
-  line-height: calc(19 * var(--rpx));
-  text-align: left;
-  white-space: nowrap;
-}
+  .windBox {
+    position: absolute;
+    width: calc(186 * var(--rpx));
+    height: calc(186 * var(--rpx));
+    top: 0;
+    left: calc(201 * var(--rpx));
+    font-size: 0px;
+    border-radius: calc(20 * var(--rpx));
+    backdrop-filter: blur(calc(5 * var(--rpx)));
+  }
 
-.precipitation-info-14 {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  position: relative;
-  width: calc(152 * var(--rpx));
-  height: calc(38 * var(--rpx));
-  margin: calc(20 * var(--rpx)) 0 0 calc(15 * var(--rpx));
-  color: #ffffff;
-  font-family: SF UI Text, var(--default-font-family);
-  font-size: 80px;
-  font-weight: 400;
-  line-height: calc(23.8671875 * var(--rpx));
-  text-align: left;
-}
+  .windBox img {
+    height: 95px;
+  }
 
-.precipitation-info-15 {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  position: relative;
-  width: calc(152 * var(--rpx));
-  height: calc(38 * var(--rpx));
-  margin: calc(13 * var(--rpx)) 0 0 calc(17 * var(--rpx));
-  color: #ffffff;
-  font-family: SF UI Text, var(--default-font-family);
-  font-size: calc(13 * var(--rpx));
-  font-weight: 400;
-  line-height: calc(15.513671875 * var(--rpx));
-  text-align: left;
-}
+  .wind-info {
+    display: block;
+    position: relative;
+    height: calc(19 * var(--rpx));
+    margin: calc(11 * var(--rpx)) 0 0 calc(15 * var(--rpx));
+    color: #ebfce2;
+    font-family: SF UI Text, var(--default-font-family);
+    font-size: calc(16 * var(--rpx));
+    font-weight: 400;
+    line-height: calc(19 * var(--rpx));
+    text-align: left;
+    white-space: nowrap;
+  }
 
-.windBox {
-  position: absolute;
-  width: calc(186 * var(--rpx));
-  height: calc(186 * var(--rpx));
-  top: 0;
-  left: calc(201 * var(--rpx));
-  font-size: 0px;
-  border-radius: calc(20 * var(--rpx));
-  backdrop-filter: blur(calc(5 * var(--rpx)));
-}
+  .flex-column-ef {
+    position: relative;
+    height: calc(69 * var(--rpx));
+    margin: 70px 0 0 30px;
+    font-size: 0px;
+    overflow: visible auto;
+  }
 
-.windBox img {
-  height: 95px;
-}
+  .mph-wind {
+    position: relative;
+    color: #ffffff;
+    font-family: SF UI Text, var(--default-font-family);
+    font-size: calc(20 * var(--rpx));
+    font-weight: 400;
+    height: 25px;
+    margin: 0 0 0 10px;
+  }
 
-.wind-info {
-  display: block;
-  position: relative;
-  height: calc(19 * var(--rpx));
-  margin: calc(11 * var(--rpx)) 0 0 calc(15 * var(--rpx));
-  color: #ebfce2;
-  font-family: SF UI Text, var(--default-font-family);
-  font-size: calc(16 * var(--rpx));
-  font-weight: 400;
-  line-height: calc(19 * var(--rpx));
-  text-align: left;
-  white-space: nowrap;
-}
-
-.flex-column-ef {
-  position: relative;
-  height: calc(69 * var(--rpx));
-  margin: 70px 0 0 30px;
-  font-size: 0px;
-  overflow: visible auto;
-}
-
-.mph-wind {
-  position: relative;
-  color: #ffffff;
-  font-family: SF UI Text,var(--default-font-family) ;
-  font-size: calc(20 * var(--rpx));
-  font-weight: 400;
-  height: 25px;
-  margin: 0 0 0 10px;
-}
-
-.mph-gusts {
-  display: block;
-  position: relative;
-  height: 16.7333px;
-  margin: 0 0 0 10px;
-  color: #ffffff;
-  font-family: SF UI Text,var(--default-font-family) ;
-  font-size: 13.6px;
-}
-
+  .mph-gusts {
+    display: block;
+    position: relative;
+    height: 16.7333px;
+    margin: 0 0 0 10px;
+    color: #ffffff;
+    font-family: SF UI Text, var(--default-font-family);
+    font-size: 13.6px;
+  }
 }
