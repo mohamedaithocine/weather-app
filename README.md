@@ -1,14 +1,15 @@
-ECS522U Group 46 Weather App Project
-AHMED, RAO A
-AIT-HOCINE, MOHAMED
-ALANGARI, AHMED KM
-ALI, ASHAR
-ALI, ILYAS M
+### ECS522U Group 46 Weather App Project
+
+AHMED, RAO A <br>
+AIT-HOCINE, MOHAMED <br>
+ALANGARI, AHMED KM <br>
+ALI, ASHAR <br>
+ALI, ILYAS M <br>
 
 
 In the project directory, you can run the program by :
 
-### 'npm install'
+### `npm install`
 
 THEN 
 
