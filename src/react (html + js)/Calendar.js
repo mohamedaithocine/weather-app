@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import CalenderItem from "./CalenderItem";
+import CalendarItem from "./CalendarItem";
 
-function Calender() {
+function Calendar() {
   const [matches, setMatches] = useState([]);
 
   const fetchData = async () => {
@@ -45,14 +45,14 @@ function Calender() {
   return (
     <>
       <div>
-        <h1>Calender</h1>
+        <h1>Calendar</h1>
       </div>
       <div className="container my-3">
         <h3>Upcoming Matches:</h3>
         <div className="row justify-content-md-center">
           {matches.slice(0, 9).map((match, index) => (
             <div className="col md-3 align-self-start" key={index}>
-              <CalenderItem
+              <CalendarItem
                 className="h-100 d-inline-block"
                 title={`${match.homeTeam} vs ${match.awayTeam}`}
                 date={match.date}
@@ -66,4 +66,4 @@ function Calender() {
   );
 }
 
-export default Calender;
+export default Calendar;

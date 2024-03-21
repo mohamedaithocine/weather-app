@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import imgNotAvailable from "../images/image_not_available.png";
-function CalenderItem(props) {
+function CalendarItem(props) {
   const [venueData, setVenueData] = useState({
     name: "",
     address: "",
@@ -71,4 +71,4 @@ function CalenderItem(props) {
   );
 }
 
-export default CalenderItem;
+export default CalendarItem;
