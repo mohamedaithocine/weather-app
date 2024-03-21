@@ -1,0 +1,38 @@
+/* css to display the match's teams' logos*/
+.TeamLogos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* css code for logo img of each team of the match*/
+.TeamLogos img {
+    width: 50%;
+    height: 110px;
+    margin: 5px;
+}
+
+/* aligning the text on the card body to be centered*/
+.card-body {
+    text-align: center;
+}
+
+/* changing the text size of the card title so it doesnt take too much space*/
+.card-body h5 {
+    font-size: 1em;
+}
+
+/* making the match's date bold*/
+.card-date {
+    font-weight: bold;
+}
+
+/* changing the location text color to green*/
+.location-color {
+    color: green;
+}
+
+.row {
+    overflow: scroll;
+    height: 700px;
+  }
