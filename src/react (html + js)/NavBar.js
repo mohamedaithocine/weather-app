@@ -7,11 +7,11 @@ import {
   NavLink,
 } from "react-router-dom";
 import locationPinImage from "../assets/images/Location.svg";
-import calenderImage from "../assets/images/Calendar.svg";
+import calenderImage from "../assets/images/Calender.svg";
 import footballImage from "../assets/images/Football.svg";
 
 import Home from "./Home";
-import Calendar from "./Calendar";
+import Calender from "./Calender";
 import SavedLocations from "./SavedLocations";
 
 function App() {
@@ -20,17 +20,17 @@ function App() {
       <div>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/Calendar" element={<Calendar />} />
+          <Route path="/Calender" element={<Calender />} />
           <Route path="/SavedLocations" element={<SavedLocations />} />
         </Routes>
       </div>
 
       <div className="navBar">
-        <NavLink to="/Calendar" className="calendarButton">
+        <NavLink to="/Calender" className="calenderButton">
           <img
             src={calenderImage}
             alt="Matches"
-            className="calendarButtonIMG"
+            className="calenderButtonIMG"
           />
         </NavLink>
 

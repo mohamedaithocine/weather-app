@@ -2,7 +2,7 @@
   background-color: #005249;
 }
 
-.footballButton:not(.active):hover, .locationButton:not(.active):hover, .calendarButton:not(.active):hover {
+.footballButton:not(.active):hover, .locationButton:not(.active):hover, .calenderButton:not(.active):hover {
   background: rgba(0, 82, 73, 0.5);
 }
 
@@ -78,7 +78,11 @@
   border-radius: calc(20 * var(--rpx));
 }
 
-.calendarButton {
+.locationButtonIMG {
+  margin: auto;
+}
+
+.calenderButton {
   display: flex;
   position: absolute;
   width: calc(74 * var(--rpx));
@@ -87,4 +91,7 @@
   border-radius: calc(20 * var(--rpx));
 }
 
+.calenderButtonIMG {
+  margin: auto;
+}
 }
