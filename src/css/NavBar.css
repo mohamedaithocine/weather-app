@@ -8,6 +8,51 @@
 
 .navBar {
   position: sticky;
+  display: flex;
+  justify-content: space-around;
+  width: 400px;
+  height: 72.7px;
+  margin: auto;
+  margin-top: 10px;
+  top: 92svh;
+}
+
+.footballButton {
+  display: flex;
+  width: 90px;
+  height: 60px;
+  border-radius: 20px;
+}
+
+.footballButtonIMG {
+  margin: auto;
+}
+
+.locationButton {
+  display: flex;
+  width: 90px;
+  height: 60px;
+  border-radius: 20px;
+}
+
+.locationButtonIMG {
+  margin: auto;
+}
+
+.calendarButton {
+  display: flex;
+  width: 90px;
+  height: 60px;
+  border-radius: 20px;
+}
+
+.calendarButtonIMG {
+  margin: auto;
+}
+
+@media screen and (max-width: 500px) {
+.navBar {
+  position: sticky;
   width: calc(215 * var(--rpx));
   height: calc(53 * var(--rpx));
   margin: auto;
@@ -24,10 +69,6 @@
   border-radius: calc(20 * var(--rpx));
 }
 
-.footballButtonIMG {
-  margin: auto;
-}
-
 .locationButton {
   display: flex;
   position: absolute;
@@ -37,11 +78,15 @@
   border-radius: calc(20 * var(--rpx));
 }
 
+<<<<<<< HEAD
 .locationButtonIMG {
   margin: auto;
 }
 
 .calenderButton {
+=======
+.calendarButton {
+>>>>>>> 497e49083f6a3d55f25bbef26fbd48b281e0f6dd
   display: flex;
   position: absolute;
   width: calc(74 * var(--rpx));
@@ -50,7 +95,11 @@
   border-radius: calc(20 * var(--rpx));
 }
 
+<<<<<<< HEAD
 .calenderButtonIMG {
   margin: auto;
 }
 
+=======
+}
+>>>>>>> 497e49083f6a3d55f25bbef26fbd48b281e0f6dd
