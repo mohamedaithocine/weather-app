@@ -20,7 +20,7 @@ function CalenderItem(props) {
       headers: {
         // Azlan's api key: "1dae4b29e9msh18369a4e952eb73p1f44bfjsnf5cbb3cfb218", exhausted for today
         // Add your api key below
-        "X-RapidAPI-Key": "1dae4b29e9msh18369a4e952eb73p1f44bfjsnf5cbb3cfb218",
+        "X-RapidAPI-Key": "",
         "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com",
       },
     };
