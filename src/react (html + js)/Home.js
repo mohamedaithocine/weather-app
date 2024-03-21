@@ -15,6 +15,7 @@ import drizzleBG from "../assets/images/drizzleBG.jpg";
 import rainBG from "../assets/images/rainBG.jpg";
 import snowBG from "../assets/images/snowBG.jpg";
 
+// The declaration is stated
 export default function Main() {
   const [city, setCity] = useState("Mile End");
   const [weatherData, setWeatherData] = useState(null);
@@ -37,7 +38,9 @@ export default function Main() {
   const [time3PM, set3PM] = useState(0);
 
   const fetchData = useCallback(async () => {
+    // The weather data from the API is being fetched
     try {
+      // HTTP requests that come from axios
       const response = await axios.get(
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=b167c88bb7301bc04a99e1bd24f7c97c`
       );
@@ -126,67 +129,12 @@ export default function Main() {
           "Hydration: Ensure players are well-hydrated before the game and during breaks. Dehydration can significantly reduce performance levels and increase the risk of heat-related illnesses.\nSun Protection: Use sunscreen and consider protective clothing. Prolonged exposure to the sun can cause sunburn and contribute to fatigue.\nPace Management: Start with a conservative pace to prevent early fatigue caused by the heat. Consider more frequent substitutions to maintain a high energy level throughout the match.\nUtilize Width: Spread the play to make the opposition work harder and exploit spaces, as players tire more quickly in hot conditions."
         );
       }
-
-      // Change Icons based on the weather
-      // if (
-      //   response.data.weather[0].icon === "01d" ||
-      //   response.data.weather[0].icon === "01n"
-      // ) {
-      //   setWicon(clear_icon);
-      //   setAdvice(`Hydration: Ensure players are well-hydrated before the game and during breaks. Dehydration can significantly reduce performance levels and increase the risk of heat-related illnesses.\nSun Protection: Use sunscreen and consider protective clothing. Prolonged exposure to the sun can cause sunburn and contribute to fatigue.\nPace Management: Start with a conservative pace to prevent early fatigue caused by the heat. Consider more frequent substitutions to maintain a high energy level throughout the match.\nUtilize Width: Spread the play to make the opposition work harder and exploit spaces, as players tire more quickly in hot conditions.`)
-      //   // setBGicon(cloudBG);
-      // } else if (
-      //   response.data.weather[0].icon === "02d" ||
-      //   response.data.weather[0].icon === "02n"
-      //   ) {
-      //     setWicon(cloud_icon);
-      //     setAdvice(`Hydration: Ensure players are well-hydrated before the game and during breaks. Dehydration can significantly reduce performance levels and increase the risk of heat-related illnesses.\nSun Protection: Use sunscreen and consider protective clothing. Prolonged exposure to the sun can cause sunburn and contribute to fatigue.\nPace Management: Start with a conservative pace to prevent early fatigue caused by the heat. Consider more frequent substitutions to maintain a high energy level throughout the match.\nUtilize Width: Spread the play to make the opposition work harder and exploit spaces, as players tire more quickly in hot conditions.`)
-      //     // setBGicon(cloudBG);
-      //   } else if (
-      //     response.data.weather[0].icon === "03d" ||
-      //     response.data.weather[0].icon === "03n"
-      //     ) {
-      //       setWicon(drizzle_icon);
-      //       setAdvice(`Footwear: Ensure players have the right boots for slippery surfaces. Adequate grip can prevent slips and injuries.\nShort Passing Game: Focus on a short passing strategy. Slippery conditions can make long balls unpredictable and harder to control.\nHigh Press: Implement a high pressing game. The opposition is more likely to make mistakes in wet conditions, which your team can capitalize on.\nProtect the Ball: Encourage players to shield the ball effectively. In drizzly conditions, maintaining possession can be challenging due to the ball's unpredictable movement.`)
-      //       // setBGicon(drizzleBG);
-      //     } else if (
-      //       response.data.weather[0].icon === "04d" ||
-      //       response.data.weather[0].icon === "04n"
-      //       ) {
-      //         setWicon(drizzle_icon);
-      //         setAdvice(`Footwear: Ensure players have the right boots for slippery surfaces. Adequate grip can prevent slips and injuries.\nShort Passing Game: Focus on a short passing strategy. Slippery conditions can make long balls unpredictable and harder to control.\nHigh Press: Implement a high pressing game. The opposition is more likely to make mistakes in wet conditions, which your team can capitalize on.\nProtect the Ball: Encourage players to shield the ball effectively. In drizzly conditions, maintaining possession can be challenging due to the ball's unpredictable movement.`)
-      //         // setBGicon(drizzleBG);
-      //       } else if (
-      //         response.data.weather[0].icon === "09d" ||
-      //         response.data.weather[0].icon === "09n"
-      //         ) {
-      //           setWicon(rain_icon);
-      //           setAdvice(`Adapted Tactics: Consider a more direct style of play. Heavy rain can slow down the ball on the pitch, making intricate play more difficult.\nSet Pieces: Focus on set pieces as they can become more decisive in rainy conditions. Goalkeepers and defenders might struggle with ball handling, creating opportunities.\nVisibility: Ensure players communicate loudly and clearly. Heavy rain can impair visibility and hearing, making communication on the pitch crucial.\nSafe Defending: Encourage defenders to clear the ball safely rather than attempting to play out from the back, as the wet surface can lead to mistakes.`)
-      //           // setBGicon(rainBG);
-      //         } else if (
-      //           response.data.weather[0].icon === "10d" ||
-      //           response.data.weather[0].icon === "10n"
-      // ) {
-      //   setWicon(rain_icon);
-      //   setAdvice(`Adapted Tactics: Consider a more direct style of play. Heavy rain can slow down the ball on the pitch, making intricate play more difficult.\nSet Pieces: Focus on set pieces as they can become more decisive in rainy conditions. Goalkeepers and defenders might struggle with ball handling, creating opportunities.\nVisibility: Ensure players communicate loudly and clearly. Heavy rain can impair visibility and hearing, making communication on the pitch crucial.\nSafe Defending: Encourage defenders to clear the ball safely rather than attempting to play out from the back, as the wet surface can lead to mistakes.`)
-      //   // setBGicon(rainBG);
-      // } else if (
-      //   response.data.weather[0].icon === "13d" ||
-      //   response.data.weather[0].icon === "13n"
-      //   ) {
-      //     setWicon(snow_icon);
-      //     setAdvice(`Visibility: Use a high-visibility ball and ensure players' kits contrast well with the snow. This helps in tracking the ball and player movements.\nWarm-Up Thoroughly: A comprehensive warm-up is crucial to prevent muscle injuries in cold conditions.\nAdjust the Play: Play a simpler game. Snow can make the pitch unpredictable, so reducing the risk with simpler passes and plays can be effective.\nFocus on Ball Control: Emphasize the importance of first-touch ball control. Snow can alter the speed and direction of the ball, making control more challenging.`)
-      //     // setBGicon(snowBG);
-      //   } else {
-      //     setWicon(cloud_icon);
-      //     setAdvice(`Hydration: Ensure players are well-hydrated before the game and during breaks. Dehydration can significantly reduce performance levels and increase the risk of heat-related illnesses.\nSun Protection: Use sunscreen and consider protective clothing. Prolonged exposure to the sun can cause sunburn and contribute to fatigue.\nPace Management: Start with a conservative pace to prevent early fatigue caused by the heat. Consider more frequent substitutions to maintain a high energy level throughout the match.\nUtilize Width: Spread the play to make the opposition work harder and exploit spaces, as players tire more quickly in hot conditions.`)
-      //   // setBGicon(cloudBG);
-      // }
     } catch (error) {
       console.error(error);
     }
   }, [city]);
 
+  // Weather data and icons are set based on user input
   useEffect(() => {
     fetchData();
   }, [fetchData]);
@@ -194,6 +142,7 @@ export default function Main() {
     setCity(e.target.value);
   };
   const handleSubmit = (e) => {
+    // This handles the submission of the form
     e.preventDefault();
     fetchData();
   };
@@ -311,6 +260,7 @@ export default function Main() {
           </div>
         </>
       ) : (
+        // When the weather isn't available an error message will show
         <div className="main-container">
           <p>Something went horribly wrong.</p>
         </div>

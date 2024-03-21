@@ -60,15 +60,14 @@ function SavedLocations() {
     setSavedWeatherData(updatedSavedData);
   };
 
-  
-  // DISPLAY AND RENDER SECTION 
+  // DISPLAY AND RENDER SECTION
   // First bit is search  bar and header as well as form where it
-  // gets data about location from the 
+  // gets data about location from the
   // Save and unsave button for local storage
-  
+
   // Under div of "Saved Weather" it accesses and displays
   // local storage of location weather data
-  
+
   return (
     <div>
       <h1>Saved Locations</h1>
