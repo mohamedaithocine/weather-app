@@ -110,7 +110,7 @@ button {
 
 .saved-weather {
   overflow-y: auto; /* Enable vertical scrolling */
-  max-height: 300px;
+  height: 550px;
 }
 
 .saved-weather::-webkit-scrollbar {

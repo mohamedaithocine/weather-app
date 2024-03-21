@@ -412,7 +412,8 @@
     line-height: calc(17.900390625 * var(--rpx));
     text-align: left;
   }
-  /* .tipsBox {
+  
+  .tipsBox {
     position: relative;
     width: calc(385 * var(--rpx));
     height: 157.6px;
@@ -420,7 +421,7 @@
     backdrop-filter: blur(calc(5 * var(--rpx)));
     margin-top: 15px;
     display: block;
-  } */
+  }
 
   .warm-up-tips {
     position: absolute;

@@ -51,6 +51,8 @@ export default function Main() {
       );
 
       console.log(hourlyResponse.data); // You can see all the weather data in console log
+
+      // Set hourly weather
       set9AM(Math.floor(hourlyResponse.data.list[6].main.temp));
       set10AM(Math.floor(hourlyResponse.data.list[7].main.temp));
       set11AM(Math.floor(hourlyResponse.data.list[8].main.temp));
@@ -60,6 +62,7 @@ export default function Main() {
       set3PM(Math.floor(hourlyResponse.data.list[12].main.temp));
 
       setWindDegree(response.data.wind.deg);
+      // Set icons and info based on weather
       if (response.data.weather && response.data.weather.length > 0) {
         response.data.weather.forEach((weatherEntry) => {
           const icon = weatherEntry.icon;

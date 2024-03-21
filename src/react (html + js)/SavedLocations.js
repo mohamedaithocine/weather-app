@@ -36,6 +36,7 @@ function SavedLocations() {
     fetchData();
   };
 
+  // To save location weather data in local storage if not already there
   const handleSave = (e) => {
     const isAlreadySaved = savedWeatherData.some(
       (savedData) => savedData.id === weatherData.id
@@ -59,6 +60,15 @@ function SavedLocations() {
     setSavedWeatherData(updatedSavedData);
   };
 
+  
+  // DISPLAY AND RENDER SECTION 
+  // First bit is search  bar and header as well as form where it
+  // gets data about location from the 
+  // Save and unsave button for local storage
+  
+  // Under div of "Saved Weather" it accesses and displays
+  // local storage of location weather data
+  
   return (
     <div>
       <h1>Saved Locations</h1>
