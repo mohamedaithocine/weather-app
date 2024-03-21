@@ -74,10 +74,15 @@ export default function Main() {
             setAdvice(
               "Extended Warm-Up: Implement a longer, more dynamic warm-up to increase body temperature and blood flow, reducing injury risk. \nLayered Clothing: Advise players to wear appropriate layers, including moisture-wicking base layers and thermal gear, to maintain warmth without restricting movement. \nHigh Tempo Play: Maintain a high tempo and encourage continuous movement to keep players warm and engaged, preventing the body from cooling down."
             );
-          } else if (icon === "02d" || icon === "02n") {
+          } else if ((icon === "02d" || icon === "02n") && temperature >= 10) {
             setWicon(cloud_icon);
             setAdvice(
               "Hydration: Ensure players are well-hydrated before the game and during breaks. Dehydration can significantly reduce performance levels and increase the risk of heat-related illnesses.\nSun Protection: Use sunscreen and consider protective clothing. Prolonged exposure to the sun can cause sunburn and contribute to fatigue.\nPace Management: Start with a conservative pace to prevent early fatigue caused by the heat. Consider more frequent substitutions to maintain a high energy level throughout the match.\nUtilize Width: Spread the play to make the opposition work harder and exploit spaces, as players tire more quickly in hot conditions."
+            );
+          } else if ((icon === "02d" || icon === "02n") && temperature < 10) {
+            setWicon(cloud_icon);
+            setAdvice(
+              "Extended Warm-Up: Implement a longer, more dynamic warm-up to increase body temperature and blood flow, reducing injury risk. \nLayered Clothing: Advise players to wear appropriate layers, including moisture-wicking base layers and thermal gear, to maintain warmth without restricting movement. \nHigh Tempo Play: Maintain a high tempo and encourage continuous movement to keep players warm and engaged, preventing the body from cooling down."
             );
           } else if (icon === "03d" || icon === "03n") {
             setWicon(drizzle_icon);
@@ -106,7 +111,9 @@ export default function Main() {
             );
           } else {
             setWicon(cloud_icon);
-            setAdvice(/* Default advice */);
+            setAdvice(
+              "Hydration: Ensure players are well-hydrated before the game and during breaks. Dehydration can significantly reduce performance levels and increase the risk of heat-related illnesses.\nSun Protection: Use sunscreen and consider protective clothing. Prolonged exposure to the sun can cause sunburn and contribute to fatigue.\nPace Management: Start with a conservative pace to prevent early fatigue caused by the heat. Consider more frequent substitutions to maintain a high energy level throughout the match.\nUtilize Width: Spread the play to make the opposition work harder and exploit spaces, as players tire more quickly in hot conditions."
+            );
           }
         });
       } else {
