@@ -119,4 +119,5 @@ button {
 
 .saved-weather {
   -ms-overflow-style: none;
+  scrollbar-width: none;
 }

@@ -9,6 +9,7 @@
 .main-container,
 .main-container * {
   box-sizing: border-box;
+  scrollbar-width: none;
 }
 
 .main-container {
@@ -168,6 +169,7 @@
 
 .tipsBox {
   -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+  scrollbar-width: none;
 }
 
 .warm-up-tips {
