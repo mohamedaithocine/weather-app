@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "../images/premier-league-logo.png";
 import "../css/CalendarItem.css";
 
 // CalenderItem component to display match data
